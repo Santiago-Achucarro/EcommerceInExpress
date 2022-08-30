@@ -1,0 +1,272 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  color: #000;
+}
+
+body {
+  background-color: rgb(234, 237, 237);
+  font-family: "ROBOTO", sans-serif;
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+/* ------ NAVBAR -------- */
+.navbar {
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0%;
+  padding: 15px 0;
+	margin-bottom: 20px;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(2px);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.container{
+  margin: 0 20px;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+.contenedor-nav {
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+	width: 100%;
+  font-size: 15px;
+}
+.contenedor-enlaces{
+    display: flex;
+    align-items: center;
+}
+.logo{
+  display: flex;
+  align-items: center;
+}
+.logo h1{
+  font-size: 25px;
+}
+
+.contenedor-carrito{
+  display: flex;
+  justify-content: end;
+}
+
+.prueba{
+  display: none;
+}
+
+.activo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  position: relative;
+  right: 12px;
+  top: -4px;
+  width: 15px;
+  height: 15px;
+  background-color: #e61919;
+  opacity: 0.9;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+
+/* ------ FINDER DE PRODUCTS ------ */
+
+.box-search{
+  display: flex;
+  justify-content: center;
+  
+  margin: 5px;
+}
+
+input{
+  text-align: center;
+}
+
+
+/* ------ CARRITO DE PRODUCTOS -------- */
+.contenedor-pr{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100vw;
+  height: 20vmax;
+  margin-top: 10px ;
+  
+
+}
+.box-prod {
+  display: flex;
+  justify-content: space-around;
+  min-width: 60%;
+  height: 100%;
+  background-color: rgba(83, 81, 81, 0.708);
+  border: 2px solid rgba(83, 81, 81, 0.708); 
+  box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+
+  
+  
+}
+.carro{
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+ 
+}
+ li {
+  list-style: none;
+ 
+}
+
+
+/* ------ CARDS DE PRODUCTOS -------- */
+.cards{
+  max-width: 100vw;
+  max-height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-bottom: 10px;
+}
+.card{
+  margin: 25px;
+  max-width: 300px;
+  box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+}
+.img{
+  background-color: #EAE7E8;
+  max-width: 50vw;
+  max-height: 500px;
+}
+
+
+.btns{
+  display: flex;
+ 
+}
+
+.btn1{
+  border: 1px solid;
+  padding: 10px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  flex:3;
+  font-size: 18px;
+  
+}
+.btns button:hover{
+  opacity: 0.7;
+}
+
+.rest{
+  color: white;
+  border:1px solid ;
+  cursor: pointer;
+  background-color:  #000;
+  flex:1;
+} 
+
+#btn1-1{
+  display: none;
+}
+#btn2-2{
+  display: none;
+}
+#btn3-3{
+  display: none;
+}
+ #btn4-4{
+  display: none;
+}
+#btn5-5{
+  display: none;
+}
+#btn6-6{
+  display: none;
+}
+#btn7-7{
+  display: none;
+}
+#btn8-8{
+  display: none;
+}
+#btn9-9{
+  display: none;
+}
+#btn10-10{
+  display: none; 
+} 
+
+/* CLASE DEFINIDA EN JS DE LAS CARDS PARA OCULTARLAS CUANDO SE REALIZA EL FILTRO */
+
+.buscador{
+  display: none;
+}
+
+/* FOOTER */
+
+
+
+footer{
+  width: 100%;
+  height: 5vh;
+  bottom: 0;
+  background-color: rgba(125, 118, 118, 0.544);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px ;
+  position: absolute;
+}
+
+
+
+/* MEDIA QUERIES */
+
+
+@media only screen and (max-width: 600px) {
+  h1{
+    font-size: 20px;
+  }
+  .container{
+    flex-direction: column;
+  }
+  .contenedor{
+    font-size: 10px;
+  }
+  .logo h1{
+    font-size: 20px;
+  }
+  .contenedor-carrito{
+    position: absolute;
+    justify-content: center;
+    margin: 0%;
+    padding-top:10px ;
+    top: 550px;
+    right: 10px;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 959px){
+    .contenedor{
+      font-size: 10px;
+    }
+    h1{
+      font-size: 20px;
+    }
+    
+    }
