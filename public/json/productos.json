@@ -1,0 +1,69 @@
+[
+    {
+        "prod": "Torta 1",
+        "valor" : 200,
+        "stock" : 10,
+        "img": "/images/TortaPrueba.jpg"
+    },
+    {
+        "prod" : "Torta 2",
+        "valor" : 250,
+        "stock" : 6,
+        "img": "/images/TortaPrueba.jpg"
+    },
+    {
+        "prod": "Torta 3",
+        "valor": 300,
+        "stock" : 4,
+        "img": "/images/TortaPrueba.jpg"
+    },
+    {
+        "prod": "Torta 4",
+        "valor": 400,
+        "stock" : 2,
+        "img": "/images/TortaPrueba.jpg"
+    },
+    {
+        "prod": "Torta 5",
+        "valor": 350,
+        "stock" : 7,
+        "img": "/images/TortaPrueba.jpg"
+    },
+    {
+        "prod": "Torta 6",
+        "valor": 150,
+        "stock" : 3,
+        "img": "/images/TortaPrueba.jpg"
+    },
+    {
+        "prod": "Torta 7",
+        "valor": 500,
+        "stock" : 1,
+        "img": "/images/TortaPrueba.jpg"
+    },
+    {
+        "prod": "Torta 8",
+        "valor": 700,
+        "stock" : 3,
+        "img": "/images/TortaPrueba.jpg"
+    },
+    {
+        "prod": "Torta 9",
+        "valor": 1000,
+        "stock" : 10,
+        "img": "/images/TortaPrueba.jpg" 
+    },
+    {
+        "prod": "Torta 10",
+        "valor": 1200,
+        "stock" : 2,
+        "img": "/images/TortaPrueba.jpg" 
+    },
+    {
+        "prod": "Torta 11",
+        "valor": 1400,
+        "stock" : 8,
+        "img": "/images/TortaPrueba.jpg" 
+    }
+
+]

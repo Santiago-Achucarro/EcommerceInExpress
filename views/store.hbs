@@ -1,0 +1,72 @@
+<link rel="stylesheet" href="/css/store.css">
+   {{>navStore}}
+    <!-- BOX DE PRODUCTOS -->
+    <section class="contenedor-pr">
+      <div class="box-prod">
+        <div class="carro">
+
+          <div class="cantidades" >
+            <h3>Cantidad</h3>
+            <ol id="cantidades">
+              
+            </ol>
+          </div>
+
+          <div class="unidad" >
+            <h3>Unidad</h3>
+            <ol id="unidad">
+            
+            </ol>
+          </div>
+
+          <div class="valores" >
+            <h3>Valor</h3>
+            <ol id="valores">
+           
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HEADER END-->
+
+    <!-- FILTRADOR DE PRODUCTOS -->
+
+    <section class="box-search">
+      <div class="search-pr" id="search-pr">
+        <input
+          type="search"
+          name="search"
+          id="search"
+          placeholder="Producto/Valor/Stock"
+          size="35vw"
+        />
+      </div>
+    </section>
+
+    <!-- PRODUCTOS -->
+    <section class="cards">
+      <!--Articulo 1-->
+ 
+    {{#each products}}
+     <article class="card">
+      <div class="img">
+        <img src ={{img}} alt="Cake" style="width:100%">
+      </div>
+      <div class="titles">
+        <h1>{{prod}}</h1>
+        <h3>${{valor}}</h3>
+        <h4><bold>{{stock}} EN STOCK</bold></h4>
+      </div>
+      <div class="btns">
+        <input  type="number" value="0" style="display:none;">
+        <button class="btn1">Add to Cart</button>
+        <button class="rest hidden">-</button>
+      </div>
+     </article>
+     {{/each}}
+    
+    </section>
+    <!-- PRODUCTOS END-->
+  <script src="/helpers/functions.js"></script>

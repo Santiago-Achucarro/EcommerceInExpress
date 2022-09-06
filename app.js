@@ -2,27 +2,20 @@
 const express = require("express");
 const hbs = require("express-handlebars")
 const port = 3000
-
+const bodyParser = require('body-parser');
 
 const app = express();
-app.use(express.static("public"))
+app.use(bodyParser.urlencoded({extended:false}))
 
 app.engine('.hbs', hbs.engine({extname:".hbs"}));
 app.set('view engine', '.hbs');
 app.set('views', './views');
 
-app.get("/", (req, res) => {
-    res.render(`home`)
-})
+// Routes
+app.use(require("./routes/app.routes"))
 
-app.get("/tienda", (req, res) => {
-    res.render(`tienda`)
-})
-
-app.get("/contacto", (req,res) => {
-    res.render(`contacto.hbs`)
-})
-
+// Static Folder
+app.use(express.static("public"))
 
 app.listen(port,(err) => {
 err? console.log(err.code)

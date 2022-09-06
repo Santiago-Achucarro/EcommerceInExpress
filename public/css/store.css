@@ -180,6 +180,10 @@ input{
   flex:1;
 } 
 
+.hidden{
+  display: none;
+}
+
 #btn1-1{
   display: none;
 }
@@ -216,24 +220,6 @@ input{
 .buscador{
   display: none;
 }
-
-/* FOOTER */
-
-
-
-footer{
-  width: 100%;
-  height: 5vh;
-  bottom: 0;
-  background-color: rgba(125, 118, 118, 0.544);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 15px ;
-  position: absolute;
-}
-
-
 
 /* MEDIA QUERIES */
 
