@@ -18,5 +18,8 @@ controller.RenderStore = (req, res) => {
     
 }
 
+controller.RenderRegister = (req,res) => {
+    res.render("register")
+}
 
 module.exports = controller;
