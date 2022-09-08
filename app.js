@@ -1,21 +1,22 @@
-// const { response } = require("express");
+require("./src/database/mongo");
 const express = require("express");
 const hbs = require("express-handlebars")
 const port = 3000
 const bodyParser = require('body-parser');
+const path = require("path")
 
 const app = express();
 app.use(bodyParser.urlencoded({extended:false}))
 
 app.engine('.hbs', hbs.engine({extname:".hbs"}));
 app.set('view engine', '.hbs');
-app.set('views', './views');
+app.set('views', './src/views');
 
 // Routes
-app.use(require("./routes/app.routes"))
+app.use(require("./src/routes/app.routes"))
 
 // Static Folder
-app.use(express.static("public"))
+app.use(express.static(path.join(__dirname ,"src/public")))
 
 app.listen(port,(err) => {
 err? console.log(err.code)
