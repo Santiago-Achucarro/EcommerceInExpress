@@ -13,9 +13,12 @@ app.set('views', './views');
 
 // Routes
 app.use(require("./routes/app.routes"))
+app.use(require("./routes/form.routes"))
 
 // Static Folder
 app.use(express.static("public"))
+
+
 
 app.listen(port,(err) => {
 err? console.log(err.code)

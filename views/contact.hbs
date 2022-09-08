@@ -2,8 +2,9 @@
 {{>navContact}}
 
         <!--FORMULARIO-->
+        
     <main class="contenedor">
-        <form action="" class="contenedor-one">
+        <form action="/contact" method="POST" class="contenedor-one">
             <h1>Contactenos</h1>
             <label for="name">Nombre</label>
             <input type="text" name="name" id="name">
@@ -14,3 +15,8 @@
             <button type="submit">ENVIAR</button>
         </form>
     </main>
+
+    {{#each arrWarnings}}
+        <p>{{msg}}</p>
+    {{/each}}
+<script src="/helpers/toastify.js"></script>
