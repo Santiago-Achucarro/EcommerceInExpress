@@ -5,8 +5,7 @@ const validationRules = [
     body("name")
         .notEmpty().withMessage("Campo Obligatorio"),
     body("number")
-        .isMobilePhone().withMessage("Ingrese un Numero de Celular")
-        .isLength({ min:10, max:10}).withMessage("Faltan Numeros"),
+        .isMobilePhone().isLength({ min:10, max:10}).withMessage("Ingrese un Numero de Celular"),
     body("email")
         .notEmpty().withMessage("Campo Obligatorio"),
 
@@ -14,10 +13,8 @@ const validationRules = [
     const errors = validationResult(req);
         if(!errors.isEmpty()){
             const formData = req.body
-            const arrWarnings = errors.array();
-            console.log(arrWarnings);
-          
-            res.render("contact", { arrWarnings, formData })
+            const arrayErr = errors.array();
+            res.render("contact", { arrayErr, formData, title:'Contact', })
           } else return next()
 }
 ]

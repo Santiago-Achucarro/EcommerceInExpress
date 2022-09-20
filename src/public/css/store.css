@@ -2,12 +2,13 @@
 /* ------ NAVBAR -------- */
 .navbar {
   display: flex;
+  gap: 5px;
   align-items: center;
   position: sticky;
   top: 0%;
   padding: 15px 0;
 	margin-bottom: 20px;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color:#C3B299;
   backdrop-filter: blur(2px);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
@@ -60,7 +61,122 @@
 }
 a {
   text-decoration: none;
-  color: #000;
+  color: black;
+
+}
+
+.users{
+  display: flex;
+  gap: 15px;
+}
+.users > p{
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.btn-logout{
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+/*INICIAR SESION O REGISTRARSE  */
+
+
+.settings{
+  position: absolute;
+  top: 2%;
+  left: 76%;
+  height: 5%;
+  width: 10%;
+  font-size: 15px;
+  box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.3) ;
+  background-color:rgba(149, 149, 149, 0.978);
+  border: 1px solid ;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+
+.animateboxforms{
+  animation-duration: 1s;
+  animation-name: formbox;
+
+}
+.openbox{
+  animation-duration: 0.5s;
+  animation-name: openbox;
+}
+
+.closebox{
+  animation-duration: 0.5s;
+  animation-name: closebox;
+}
+.down{
+  animation: 1s;
+  animation-name: down;
+}
+.right{
+  animation: 1s;
+  animation-name: right;
+}
+.arrow{
+  transform: rotate(-90deg);
+}
+
+.cerrar{
+  cursor: pointer;
+}
+
+
+@keyframes down{
+  from{
+    transform: rotate(-90deg)
+  }
+  to{
+    transform: rotate(0deg)
+  }
+}
+@keyframes right{
+  from{
+    transform: rotate(0deg)
+  }
+  to{
+    transform: rotate(-90deg)
+  }
+}
+
+@keyframes formbox{
+  from{
+    top:5%
+  }
+  to{
+    top:15%
+  }
+}
+
+
+@keyframes openbox{
+  from{
+    top:1.5%
+  }
+  to{
+    top:2%
+  }
+}
+
+@keyframes closebox{
+  from{
+    top:10%
+  }
+  to{
+    top:8.5%
+  }
 }
 
 

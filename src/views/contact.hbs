@@ -1,8 +1,14 @@
 <link rel="stylesheet" href="/css/contact.css">
+
 {{>navContact}}
 
-        <!--FORMULARIO-->
-        
+         <!--FORMULARIO-->
+          
+    <div class="err">   
+            {{#each arrayErr}}
+                <p>{{msg}}</p>
+            {{/each}}   
+    </div>
     <main class="contenedor">
         <form action="/contact" method="POST" class="contenedor-one">
             <h1>Contactenos</h1>
@@ -15,8 +21,6 @@
             <button type="submit">ENVIAR</button>
         </form>
     </main>
-
-    {{#each arrWarnings}}
-        <p>{{msg}}</p>
-    {{/each}}
-<script src="/helpers/toastify.js"></script>
+ 
+       
+ 

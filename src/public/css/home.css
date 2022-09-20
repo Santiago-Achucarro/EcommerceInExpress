@@ -1,9 +1,21 @@
 
+.hidden{
+  visibility: hidden;
+}
+
+.opacity{
+  opacity: 10%;
+}
+.hide{
+  opacity: 0.3;
+  filter: alpha(opacity=50);
+}
 /*---------------------*/
 /*------- NAVBAR ------*/
 /*---------------------*/
 .navbar {
   display: flex;
+  flex-direction: column;
   align-items: center;
   position: sticky;
   top: 0%;
@@ -45,6 +57,21 @@ a {
   text-decoration: none;
   color: #000;
 }
+.users{
+  display: flex;
+  gap: 15px;
+}
+.users > p{
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.btn-logout{
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 /*-------------------------------------*/
 /*-------CONTENEDORES DE INFO ---------*/
 /*-------------------------------------*/
@@ -132,10 +159,162 @@ img {
   border: 1px solid;
   border-radius: 2px;
   text-align: center;
-} */
+} 
+
+
+
+
+/*INICIAR SESION O REGISTRARSE  */
+
+.container-form{
+  position: absolute;
+  top: 15%;
+  left: 25%;
+  height: 45%;
+  width: 50%;
+  font-size: 15px;
+  box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.3) ;
+  background-color:rgba(149, 149, 149, 0.978);
+  border: 1px solid ;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.container-form input{
+  width: 50%;
+  height: 10%;
+  border: 0;
+  border-radius: 2px;
+  padding-left: 5px;
+  color: white;
+  background-color: rgba(97, 94, 94, 0.726);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2) ;
+}
+
+.container-form button{
+width: 15%;
+border: 1px solid grey;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2) ;
+border-radius: 3px;
+font-size: 13px;
+background-color: whitesmoke;
+margin-top: 10px;
+} 
+
+.divRegister{
+  margin-top:10px;
+}
+.parRegister{
+  font-size: 15px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
+.settings{
+  position: absolute;
+  top: 10%;
+  left: 45%;
+  height: 10%;
+  width: 10%;
+  font-size: 15px;
+  box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.3) ;
+  background-color:rgba(149, 149, 149, 0.978);
+  border: 1px solid ;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+
+.animateboxforms{
+  animation-duration: 1s;
+  animation-name: formbox;
+
+}
+.openbox{
+  animation-duration: 0.5s;
+  animation-name: openbox;
+}
+
+.closebox{
+  animation-duration: 0.5s;
+  animation-name: closebox;
+}
+.down{
+  animation: 1s;
+  animation-name: down;
+}
+.right{
+  animation: 1s;
+  animation-name: right;
+}
+.arrow{
+  transform: rotate(-90deg);
+}
+
+.cerrar{
+  cursor: pointer;
+}
+
+
+@keyframes down{
+  from{
+    transform: rotate(-90deg)
+  }
+  to{
+    transform: rotate(0deg)
+  }
+}
+@keyframes right{
+  from{
+    transform: rotate(0deg)
+  }
+  to{
+    transform: rotate(-90deg)
+  }
+}
+
+@keyframes formbox{
+  from{
+    top:5%
+  }
+  to{
+    top:15%
+  }
+}
+
+
+@keyframes openbox{
+  from{
+    top:8.5%
+  }
+  to{
+    top:10%
+  }
+}
+
+@keyframes closebox{
+  from{
+    top:10%
+  }
+  to{
+    top:8.5%
+  }
+}
+
 /*-------------------------------------*/
 /*--------- FOOTER --------------------*/
 /*-------------------------------------*/
+
+
 
 footer {
   width: 100%;
@@ -182,6 +361,16 @@ footer {
   .contenedor-article3 ul li {
     font-size: 15px;
   }
+  .container-form{
+    height: 40vh;
+    width: 65vw;
+    top:45%;
+    left: 20%;
+  }
+  .container-form button{
+    width: 30%;
+    font-size: 12px;
+  }
   footer{
     font-size: 13px;
   }
@@ -221,6 +410,16 @@ footer {
   .contenedor-article3 ul li {
     font-size: 15px;
   }
+  .container-form{
+    height: 40vh;
+    width: 75vw;
+    top:25%;
+    left: 15%;
+  }
+  .container-form button{
+    width: 30%;
+    font-size: 12px;
+  }
 }
 
 @media only screen and (min-width: 600px) and (max-width: 759px) {
@@ -240,6 +439,16 @@ footer {
   .contenedor-article3 ul li {
     font-size: 16px;
   }
+  .container-form{
+    height: 40vh;
+    width: 75vw;
+    top:25%;
+    left: 15%;
+  }
+  .container-form button{
+    width: 30%;
+    font-size: 12px;
+  }
 }
 
 @media only screen and (min-width: 759px) and (max-width: 959px) {
@@ -257,5 +466,15 @@ footer {
   }
   .contenedor-article3 ul li {
     font-size: 16px;
+  }
+  .container-form{
+    height: 40vh;
+    width: 75vw;
+    top:25%;
+    left: 15%;
+  }
+  .container-form button{
+    width: 30%;
+    font-size: 12px;
   }
 }

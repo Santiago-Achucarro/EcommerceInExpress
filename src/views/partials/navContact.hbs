@@ -3,14 +3,16 @@
           
           <div class="container">
             <div class="logo">
+    {{#if user}}
               <i class="fa-solid fa-2x fa-shop"></i>
-              <h1><a href="#">Bakery The Beginning</a></h1>
+              <h1><a href="/user/homelogin">Bakery The Beginning</a></h1>
             </div>
-  
-            <h2>
-              <a id="anchor" href="/"  target="_blank">Home</a>
-            </h2>
-            <h2><a id="anchor2" href="/store" target="_blank">Tienda</a></h2>
+            <h2><a id="anchor2" href="/store">Tienda</a></h2>
+    {{else}}
+          <i class="fa-solid fa-2x fa-shop"></i>
+              <h1><a href="/">Bakery The Beginning</a></h1>
+            </div>
+    {{/if}}      
           </div>
   
         </div>

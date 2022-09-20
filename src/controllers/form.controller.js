@@ -15,7 +15,6 @@ controller.RenderPostContact = async (req,res) => {
       const sendMail = await transport.sendMail(emailMsg);
       if(sendMail.rejected.length){
         req.app.locals.sendMailStatus = "no se envio"
-
       }else{
         req.app.locals.sendMailStatus = "se envio"
       }

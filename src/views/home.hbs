@@ -1,4 +1,4 @@
- <link rel="stylesheet" href="css/home.css">
+ <link rel="stylesheet" href="/css/home.css">
 
 
 {{>navHome}}
@@ -46,4 +46,46 @@
       </div>
     </section>
         
+
+{{#if user}}
+      <div class="settings hidden" id="settings" >
+          <ul>
+            <li>Editar Perfil</li>
+            <li class="cerrar"><a href="/user/logout">Log Out</a></li>
+          </ul>
+      </div>  
+  {{else}}
+        <form action="/user/register" method="POST" class="container-form hidden" id="form-register">
+            <h1>Registrarse</h1>
+            <label for="name">Usuario</label>
+            <input type="text" name="user" >
+            <label for="email">Email</label>
+            <input type="email" name="email">
+            <label for="number">Contraseña</label>
+            <input type="password" name="password">
+        
+            <button type="submit">Registrarse</button>
+            <div class="divRegister" id="secondIniciar"><p class="parRegister">Si ya tienes una cuenta, haz click</p></div>
+        </form>
+
+
+         <form action="/user/login" method="POST" class="container-form hidden" id="form-login">
+            <h1>Inicar Sesion</h1>
+            <label for="name">Usuario</label>
+            <input type="text" name="user">
+            <label for="number">Contraseña</label>
+            <input type="password" name="password">
+        
+            <button type="submit">Acceder</button>
+            
+        </form>
+{{/if}}
+  
         {{sendMailStatus }}
+        {{message}}
+
+{{#if user}}
+<script src="/helpers/user-config.js"></script>
+{{else}}
+<script src="/helpers/user.js"></script>
+{{/if}}

@@ -3,19 +3,29 @@
         
         <div class="container">
           <div class="logo">
+  {{#if user}}
             <i class="fa-solid fa-2x fa-shop"></i>
-            <h1><a href="#">Bakery The Beginning</a></h1>
+            <h1><a href="/user/homelogin">Bakery The Beginning</a></h1>
           </div>
-
-          <h2>
-            <a id="anchor" href="/" target="_blank">Home</a>
-          </h2>
-          <h2><a id="anchor2" href="/contact" target="_blank">Contacto</a></h2>
+          <h2><a id="anchor2" href="/user/contact" >Contacto</a></h2>
+  {{else}}
+            <i class="fa-solid fa-2x fa-shop"></i>
+            <h1><a href="/">Bakery The Beginning</a></h1>
+          </div>
+          <h2><a id="anchor2" href="/contact" >Contacto</a></h2>
+  {{/if}}
         </div>
-
         <div class="contenedor-carrito">
           <i class="fa-solid fa-2x fa-cart-shopping"></i>
           <div class="activo" id="carrito"><p></p></div>
+            <div class="users" id="users">
+        {{#if user}}
+         <p id="config"><img src="/images/down-arrow.png" alt="" id="down-arrow" class="arrow">{{user}}</p>
+        {{/if}}
+      </div>
         </div>
       </div>
+
+  
+
     </header>

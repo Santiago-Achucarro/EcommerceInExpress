@@ -46,6 +46,13 @@
     color: #000;
   }
 
+
+  /* ERRORES */
+  .err{
+      position: absolute;
+      float: inline-end;
+    }
+
   /* FORMULARIO */
 
   .contenedor {
@@ -89,6 +96,7 @@
   font-size: 15px;
   background-color: whitesmoke;
 }
+
 
 /*-------------------------------------*/
 /*--------- FOOTER --------------------*/
