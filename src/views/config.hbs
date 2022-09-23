@@ -1,14 +1,46 @@
+
+{{> nav}}
  
- <form action="/user/register" method="POST" class="container-form hidden" id="form-register">
-            <h1>Configuracion</h1>
-            <label for="name">Usuario</label>
-            <input type="text" name="user" >
-            <label for="email">Email</label>
-            <input type="email" name="email">
-            <label for="number">Contraseña</label>
-            <input type="password" name="password">
-        
-            <button type="submit">Realizar Cambios</button>
-            <button type="submit">Eliminar Cuenta</button>
-            <div class="divRegister" id="secondIniciar"></div>
- </form>
+ 
+<div class="container-fluid mx-auto row justify-content-center align-items-center" style="height: 95vh;">
+ 
+     <div class="  col-sm-6 col-md-9 border p-5 text-center"> 
+       <form action="" class="h-100 ">
+        <div class=" mb-4">
+            <label for="exampleFormControlInput1" class="form-label">Usuario</label>
+            <input type="name" class="form-control" id="exampleFormControlInput1" autocomplete="name" value="{{user.name}}" >
+        </div>
+        <div class=" mb-4">
+            <label for="exampleFormControlInput1" class="form-label">Email</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" autocomplete="email" value="{{user.email}}" >
+        </div>
+          <div class=" mb-4">
+            <label for="exampleFormControlInput1" class="form-label">Contraseña</label>
+            <input type="pass" class="form-control" id="exampleFormControlInput1">
+        </div>
+        <div class="d-flex flex-column align-items-center ">
+        <button class="bg-light border border-success p-2 mb-4">Realizar Cambios</button>
+        <button type="button" class="bg-danger border-danger p-2 mb-4" data-bs-toggle="modal" data-bs-target="#ModalAlert">Eliminar Cuenta</button>
+        </div>
+       </form>
+     </div>
+    
+</div>
+
+<div class="modal fade " id="ModalAlert" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="ModalAlertLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="ModalAlertLabel">Eliminar Cuenta</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Estas seguro de querer eliminar esta cuenta, esta accion es irreversible
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger">Eliminar</button>
+      </div>
+    </div>
+  </div>
+</div>

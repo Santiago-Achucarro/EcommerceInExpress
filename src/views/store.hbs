@@ -1,35 +1,31 @@
 <link rel="stylesheet" href="/css/store.css">
 
    {{>navStore}}
-    <!-- BOX DE PRODUCTOS -->
-      <div class="settings hidden" id="settings" >
-          <ul>
-            <li>Editar Perfil</li>
-            <li class="cerrar"><a href="/user/logout">Log Out</a></li>
-          </ul>
-      </div>  
 
-    <section class="contenedor-pr">
-      <div class="box-prod">
+    <!-- BOX DE PRODUCTOS -->
+
+
+    <section class="contenedor-pr ">
+      <div class="box-prod bg-secondary bg-opacity-50 rounded-2">
         <div class="carro">
 
           <div class="cantidades" >
-            <h3>Cantidad</h3>
-            <ol id="cantidades">
+            <p class="fs-5 m-0">Cantidad</p>
+            <ol class="fs-6 m-0 p-0" id="cantidades">
               
             </ol>
           </div>
 
           <div class="unidad" >
-            <h3>Unidad</h3>
-            <ol id="unidad">
+            <p class="fs-5 m-0">Unidad</p>
+            <ol class="fs-6 m-0 p-0"  id="unidad">
             
             </ol>
           </div>
 
           <div class="valores" >
-            <h3>Valor</h3>
-            <ol id="valores">
+            <p class="fs-5 m-0">Valor</p>
+            <ol class="fs-6 m-0 p-0" id="valores">
            
             </ol>
           </div>
@@ -40,8 +36,11 @@
     <!-- HEADER END-->
 
     <!-- FILTRADOR DE PRODUCTOS -->
+ <form class="d-flex col-3 m-auto mt-2 " role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      </form>
 
-    <section class="box-search">
+    {{!-- <section class="box-search">
       <div class="search-pr" id="search-pr">
         <input
           type="search"
@@ -51,28 +50,42 @@
           size="35vw"
         />
       </div>
-    </section>
+    </section> --}}
 
     <!-- PRODUCTOS -->
     <section class="cards">
       <!--Articulo 1-->
  
     {{#each products}}
-     <article class="card">
+     <article class="card bg-secondary bg-opacity-50">
       <div class="img">
         <img src ={{img}} alt="Cake" style="width:100%">
       </div>
       <div class="titles">
-        <h1>{{prod}}</h1>
-        <h3>${{valor}}</h3>
-        <h4><bold>{{stock}} EN STOCK</bold></h4>
+        <h1 class="fs-3 ">{{prod}}</h1>
+        <h3 class="fs-5">${{valor}}</h3>
+        <h4 class=" fs-5">{{stock}} EN STOCK</h4>
       </div>
-      <div class="btns">
+      <div class="card-body btns">
         <input  type="number" value="0" style="display:none;">
-        <button class="btn1">Add to Cart</button>
-        <button class="rest hidden">-</button>
+        <button class="btn1 rounded-2" id="liveToastBtn">Add to Cart</button>
+        <button class="rest hidden rounded-2">-</button>
       </div>
      </article>
+
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+  <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <img src="..." class="rounded me-2" alt="...">
+      <strong class="me-auto">Producto Añadido</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+    {{prod}} con el valor de ${{valor}}
+    </div>
+  </div>
+</div>
+
      {{/each}}
     
     </section>

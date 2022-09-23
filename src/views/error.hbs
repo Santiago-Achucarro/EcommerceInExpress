@@ -1,8 +1,61 @@
  <link rel="stylesheet" href="/css/noauth.css">
 
-{{>navContact}}
+{{>nav}}
 
 <div class="center-cont">
 <img src="/images/noAuth.png" alt="" class="noauth">
 <p>NO TIENES ACCESO</p>
+</div>
+
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="logIn" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header ">
+    <h5 class="offcanvas-title " id="offcanvasRightLabel">Iniciar Sesion</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div class="col m-auto border p-5 text-center"> 
+       <form action="/user/login" method="POST" class="h-100">
+        <div class=" mb-4">
+            <label for="exampleFormControlInput1" class="form-label">Usuario</label>
+            <input type="name" name="user" class="form-control" id="exampleFormControlInput1" autocomplete="name" value="{{user.name}}" >
+        </div>
+          <div class=" mb-4">
+            <label for="exampleFormControlInput1" class="form-label">Contraseña</label>
+            <input type="pass"  name="password" class="form-control" id="exampleFormControlInput1">
+        </div>
+        <div class="d-flex flex-column align-items-center ">
+        <button class="bg-light border border-success p-2 mb-4">Iniciar</button>
+        </div>
+       </form>
+     </div>
+  </div>
+</div>
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="sigIn" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasRightLabel">Registrarse</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+      <div class="col m-auto border p-5 text-center"> 
+       <form action="/user/register" method="POST" class="h-100 ">
+        <div class=" mb-4">
+            <label for="exampleFormControlInput1" class="form-label">Usuario</label>
+            <input type="name" name="user" class="form-control" id="exampleFormControlInput1"  >
+        </div>
+        <div class=" mb-4">
+            <label for="exampleFormControlInput1" class="form-label">Email</label>
+            <input type="email" name="email" class="form-control" id="exampleFormControlInput1"  >
+        </div>
+          <div class=" mb-4">
+            <label for="exampleFormControlInput1" class="form-label">Contraseña</label>
+            <input type="pass" name="password" class="form-control" id="exampleFormControlInput1">
+        </div>
+        <div class="d-flex flex-column align-items-center ">
+        <button class="bg-light border border-success p-2 mb-4">Registrarse</button>
+        </div>
+       </form>
+     </div>
+  </div>
 </div>

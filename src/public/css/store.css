@@ -1,183 +1,11 @@
 
 /* ------ NAVBAR -------- */
-.navbar {
-  display: flex;
-  gap: 5px;
-  align-items: center;
-  position: sticky;
-  top: 0%;
-  padding: 15px 0;
-	margin-bottom: 20px;
-  background-color:#C3B299;
-  backdrop-filter: blur(2px);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-}
-.container{
-  margin: 0 20px;
-  display: flex;
-  gap: 25px;
-  align-items: center;
-}
-.contenedor-nav {
-  margin: 0;
-  display: flex;
-  justify-content: space-around;
-	width: 100%;
-  font-size: 15px;
-}
-.contenedor-enlaces{
-    display: flex;
-    align-items: center;
-}
-.logo{
-  display: flex;
-  align-items: center;
-}
-.logo h1{
-  font-size: 25px;
-}
 
-.contenedor-carrito{
-  display: flex;
-  justify-content: end;
-}
-
-.prueba{
-  display: none;
-}
-
-.activo{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  position: relative;
-  right: 12px;
-  top: -4px;
-  width: 15px;
-  height: 15px;
-  background-color: #e61919;
-  opacity: 0.9;
-}
-a {
-  text-decoration: none;
-  color: black;
-
-}
-
-.users{
-  display: flex;
-  gap: 15px;
-}
-.users > p{
-  font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
-}
-.btn-logout{
-  font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
-}
 
 
 /*INICIAR SESION O REGISTRARSE  */
 
 
-.settings{
-  position: absolute;
-  top: 2%;
-  left: 76%;
-  height: 5%;
-  width: 10%;
-  font-size: 15px;
-  box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.3) ;
-  background-color:rgba(149, 149, 149, 0.978);
-  border: 1px solid ;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-}
-
-
-.animateboxforms{
-  animation-duration: 1s;
-  animation-name: formbox;
-
-}
-.openbox{
-  animation-duration: 0.5s;
-  animation-name: openbox;
-}
-
-.closebox{
-  animation-duration: 0.5s;
-  animation-name: closebox;
-}
-.down{
-  animation: 1s;
-  animation-name: down;
-}
-.right{
-  animation: 1s;
-  animation-name: right;
-}
-.arrow{
-  transform: rotate(-90deg);
-}
-
-.cerrar{
-  cursor: pointer;
-}
-
-
-@keyframes down{
-  from{
-    transform: rotate(-90deg)
-  }
-  to{
-    transform: rotate(0deg)
-  }
-}
-@keyframes right{
-  from{
-    transform: rotate(0deg)
-  }
-  to{
-    transform: rotate(-90deg)
-  }
-}
-
-@keyframes formbox{
-  from{
-    top:5%
-  }
-  to{
-    top:15%
-  }
-}
-
-
-@keyframes openbox{
-  from{
-    top:1.5%
-  }
-  to{
-    top:2%
-  }
-}
-
-@keyframes closebox{
-  from{
-    top:10%
-  }
-  to{
-    top:8.5%
-  }
-}
 
 
 /* ------ FINDER DE PRODUCTS ------ */
@@ -210,8 +38,6 @@ input{
   justify-content: space-around;
   min-width: 60%;
   height: 100%;
-  background-color: rgba(83, 81, 81, 0.708);
-  border: 2px solid rgba(83, 81, 81, 0.708); 
   box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
 
   
@@ -225,8 +51,8 @@ input{
 }
  li {
   list-style: none;
- 
 }
+
 
 
 /* ------ CARDS DE PRODUCTOS -------- */
@@ -286,36 +112,7 @@ input{
   display: none;
 }
 
-#btn1-1{
-  display: none;
-}
-#btn2-2{
-  display: none;
-}
-#btn3-3{
-  display: none;
-}
- #btn4-4{
-  display: none;
-}
-#btn5-5{
-  display: none;
-}
-#btn6-6{
-  display: none;
-}
-#btn7-7{
-  display: none;
-}
-#btn8-8{
-  display: none;
-}
-#btn9-9{
-  display: none;
-}
-#btn10-10{
-  display: none; 
-} 
+  
 
 /* CLASE DEFINIDA EN JS DE LAS CARDS PARA OCULTARLAS CUANDO SE REALIZA EL FILTRO */
 

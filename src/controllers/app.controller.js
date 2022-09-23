@@ -1,21 +1,20 @@
 const controller = {};
-const products = require("../public/json/productos.json")
-const auth = require("../auth/authorization");
+const products = require("../public/json/productos.json");
 
 
 controller.RenderHome = (req, res) => {
-    res.render("home", { title: 'Home'})
+    res.render("home", { title: 'Home', user: req.session.user})
 }
 
 controller.RenderContact = (req, res) => {
-    res.render("contact", {title: 'Contact'})
+    res.render("contact", {title: 'Contact', user: req.session.user})
 }
 
 controller.RenderStore = (req, res) => {
     res.render("store", {
         products, 
         title: 'Store', 
-        user: req.session.user.name
+        user: req.session.user
     })
 }
 

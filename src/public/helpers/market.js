@@ -1,29 +1,11 @@
 let contenedorCantidad = document.getElementById("cantidades");
 let contenedorNombre = document.getElementById("unidad");
 let contenedorPrecio = document.getElementById("valores");
-const settings = document.getElementById("settings")
-const downarrow = document.getElementById("down-arrow");
-document.getElementById("config").addEventListener("click", configuracion);
+
 
 let btns = document.querySelectorAll(".btn1");
 
-function configuracion(){
-  if(!settings.classList.contains("hidden")){
-      downarrow.classList.add("right")
-      downarrow.classList.add("arrow")
-      downarrow.classList.remove("down")
-      settings.classList.add("hidden")
-      settings.classList.remove("openbox")
-      settings.classList.add("closebox")
-  }else{
-      downarrow.classList.remove("right")
-      downarrow.classList.remove("arrow")
-      downarrow.classList.add("down")
-      settings.classList.remove("closebox")
-      settings.classList.add("openbox")
-      settings.classList.remove("hidden")
-  }
-}
+
 
 for (let i = 0; i < btns.length; i++) {
   const element = btns[i];

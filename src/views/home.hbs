@@ -1,9 +1,118 @@
- <link rel="stylesheet" href="/css/home.css">
+ {{!-- <link rel="stylesheet" href="/css/home.css"> --}}
+{{>nav}}
+
+<main class="container-fluid d-flex flex-column gap-3 mt-3" >
+
+  <section class="col-sm-9 m-auto col-xl-6 bg-secondary bg-opacity-25  border border-secondary " >
+      <div class="text-center">
+        <h3 class="fs-4">
+          Esta es una pagina creada con una idea principal, la cual es generar
+          un ambiente en el cual compartir lo bello de la Pasteleria y sus
+          sabores
+        </h3>
+        <p class="fs-5">"Por ello aqui encontraras los sabores de manera especial"</p>
+      </div>
+    </section>
 
 
-{{>navHome}}
 
- <section class="contenedor contenedor-one">
+
+<div class=" d-flex flex-column flex-xl-row align-items-sm-center justify-content-center gap-3">
+        <article class="col-xl-4 col-sm-9 bg-secondary bg-opacity-25  border border-secondary">
+          <div class="text-center ">
+          <h1 class="fs-4">
+            Nuestros inicios se dieron hace ya 5 años, y fue solo como una idea
+            emprendedora del momento. Seleccionado por nuestros clientes mas
+            recientes por nuestra alta calidad en los productos
+          </h1>
+          </div>
+        </article>
+
+        <article class=" col-xl-4 col-sm-9 bg-secondary bg-opacity-25 border border-secondary">
+          <div class="text-center">
+          <h2 class="fs-5">
+            De igual manera buscamos reforza siempre nuestros saberes y es
+            manteniendo nuestras 4 bases
+          </h2>
+          <ul>
+            <li>Optando por nuevas recetas</li>
+            <li>Mejorando recetas viejas</li>
+            <li>Diversificando sabores</li>
+            <li>Produciendo con mayor calidad</li>
+          </ul>
+          </div>
+        </article>
+
+</div>
+<div id="carouselExampleSlidesOnly" class="carousel slide " data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="2000">
+      <img src="/images/reposteria 1.jpg" class="d-block w-50 m-auto rounded-2" alt="...">
+    </div>
+    <div class="carousel-item" data-bs-interval="2000" >
+      <img src="/images/reposteria 2.jpg" class="d-block w-50 h-75 m-auto rounded-2" alt="...">
+    </div>
+  </div>
+</div>
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="logIn" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header ">
+    <h5 class="offcanvas-title " id="offcanvasRightLabel">Iniciar Sesion</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div class="col m-auto border p-5 text-center"> 
+       <form action="/user/login" method="POST" class="h-100">
+        <div class=" mb-4">
+            <label for="exampleFormControlInput1" class="form-label">Usuario</label>
+            <input type="name" name="user" class="form-control" id="exampleFormControlInput1" autocomplete="name" value="{{user.name}}" >
+        </div>
+          <div class=" mb-4">
+            <label for="exampleFormControlInput1" class="form-label">Contraseña</label>
+            <input type="pass" name="password" class="form-control" id="exampleFormControlInput1">
+        </div>
+        <div class="d-flex flex-column align-items-center ">
+        <button class="bg-light border border-success p-2 mb-4" type="submit">Iniciar</button>
+        </div>
+       </form>
+     </div>
+  </div>
+</div>
+
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="sigIn" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasRightLabel">Registrarse</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+      <div class="col m-auto border p-5 text-center"> 
+       <form action="/user/register" method="POST" class="h-100 ">
+        <div class=" mb-4">
+            <label for="name" class="form-label">Usuario</label>
+            <input type="name" name="user" class="form-control" >
+        </div>
+        <div class=" mb-4">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" name="email" class="form-control" >
+        </div>
+          <div class=" mb-4">
+            <label for="pass" class="form-label">Contraseña</label>
+            <input type="pass" name="password" class="form-control">
+        </div>
+        <div class="d-flex flex-column align-items-center ">
+        <button class="bg-light border border-success p-2 mb-4" type="submit">Registrarse</button>
+        </div>
+       </form>
+     </div>
+  </div>
+</div>
+
+
+</main>
+
+{{!-- 
+ <section class="contenedor contenedor-one" >
       <div class="contenedor contenedor-about">
         <h3>
           Esta es una pagina creada con una idea principal, la cual es generar
@@ -44,10 +153,10 @@
           </ul>
         </article>
       </div>
-    </section>
+    </section> --}}
         
 
-{{#if user}}
+{{!-- {{#if user}}
       <div class="settings hidden" id="settings" >
           <ul>
             <li>Editar Perfil</li>
@@ -61,7 +170,7 @@
             <input type="text" name="user" >
             <label for="email">Email</label>
             <input type="email" name="email">
-            <label for="number">Contraseña</label>
+            <label for="password">Contraseña</label>
             <input type="password" name="password">
         
             <button type="submit">Registrarse</button>
@@ -73,19 +182,21 @@
             <h1>Inicar Sesion</h1>
             <label for="name">Usuario</label>
             <input type="text" name="user">
-            <label for="number">Contraseña</label>
+            <label for="password">Contraseña</label>
             <input type="password" name="password">
         
             <button type="submit">Acceder</button>
             
-        </form>
+        </form> 
 {{/if}}
+        --}}
   
         {{sendMailStatus }}
         {{message}}
 
-{{#if user}}
+
+{{!-- {{#if user}}
 <script src="/helpers/user-config.js"></script>
 {{else}}
 <script src="/helpers/user.js"></script>
-{{/if}}
+{{/if}} --}}
