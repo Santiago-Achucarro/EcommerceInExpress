@@ -7,25 +7,24 @@ const controller = {};
 
 
 controller.renderPostRegister = async (req, res) => {
-  const { user, email, password } = req.body;
-  const pass = await hashPass(password);
+  const { user, email, pass } = req.body;
+  const password = await hashPass(pass);
 
   const newUser = new User({
-    name:user,
+    user,
     email,
-    pass,
+    password,
   });
 
 const usr = {
   id: newUser._id,
-  name: newUser.name,
+  name: newUser.user,
 };
 
   req.session.user = usr
-
   newUser.save((err) => {
     if (!err) {
-      res.render("store", {products,title: "Store", user: `${req.session.user.name}`, id:`${req.session.user.id}`});
+      res.render("store", {products,title: "Store", user: req.session.user, id: req.session.user.id});
     } else {
       res.render("home", { title:"Home" , message: "Ya existe ese usuario" });
     }
@@ -33,22 +32,21 @@ const usr = {
 };
 
 controller.renderPostLogin = async (req, res) => {
-  const { user, password } = req.body;
-  const usuario = await User.find().where({ user });
-  const hashedPass = usuario[0].pass
-  console.log(user)
-  console.log(password)
-  console.log(usuario)
+  const { user, pass } = req.body;
+  const usuario = await User.find().where({user});
+  console.log(usuario);
+  if (!usuario.length ) {
+    return res.render("home", { title:"Home" , message: "Contraseña o Usuario incorrectos" });
+  };
   const usr = {
     id: usuario[0]._id,
-    name: usuario[0].name
+    name: usuario[0].user
   }
 
-  if (usuario.length || await checkPass(password, hashedPass)) {
+  if(await checkPass(pass, usuario[0].password)){
     req.session.user = usr
-    res.render("store", {products, title: "Store", user: `${req.session.user.name}`, id:`${req.session.user.id}`});
-  }
-  else{
+    res.render("store", {products, title: "Store", user: req.session.user, id:`${req.session.user.id}`});
+  }else{
   return res.render("home", { title:"Home" , message: "Contraseña o Usuario incorrectos" });
 
 }
@@ -57,7 +55,7 @@ controller.renderPostLogin = async (req, res) => {
 
 controller.RenderSettingsData = async (req,res) => {
    const user =  await User.findById(req.session.user.id).lean()
-   res.render("config", {user})
+   res.render("config", {title:"Perfil",user})
 }
 
 controller.renderGetLogout = async (req,res) => {

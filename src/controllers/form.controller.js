@@ -9,16 +9,17 @@ controller.RenderPostContact = async (req,res) => {
         to:"serviciodecontacto@enterprise.com",
         from: email,
         subject: "Solicitud De Contacto",
-        html: `Contacto de ${name} con numero ${number} y email ${email}`
+        html: `Hola que tal, mi nombre es ${name}, estoy buscando contactarme con usted, este es mi numero ${number} y este mi email ${email}`
+        // 
       }
       
       const sendMail = await transport.sendMail(emailMsg);
       if(sendMail.rejected.length){
-        req.app.locals.sendMailStatus = "no se envio"
+        req.app.locals.MailDenied = "Ocurrior un error con el contacto"
       }else{
-        req.app.locals.sendMailStatus = "se envio"
+        req.app.locals.MailAccepted = "Formulario Enviado"
       }
-      res.redirect("/")
+      res.redirect("/contact")
     
   }
 

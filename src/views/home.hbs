@@ -1,9 +1,16 @@
- {{!-- <link rel="stylesheet" href="/css/home.css"> --}}
 {{>nav}}
 
 <main class="container-fluid d-flex flex-column gap-3 mt-3" >
 
-  <section class="col-sm-9 m-auto col-xl-6 bg-secondary bg-opacity-25  border border-secondary " >
+{{#if message}}
+<div class="alert alert-danger m-auto" role="alert">
+        {{message}}
+</div>
+{{/if}}
+
+
+
+  <section class="col-sm-9 m-auto col-xl-6 bg-secondary bg-opacity-25  border border-secondary">
       <div class="text-center">
         <h3 class="fs-4">
           Esta es una pagina creada con una idea principal, la cual es generar
@@ -64,15 +71,15 @@
     <div class="col m-auto border p-5 text-center"> 
        <form action="/user/login" method="POST" class="h-100">
         <div class=" mb-4">
-            <label for="exampleFormControlInput1" class="form-label">Usuario</label>
-            <input type="name" name="user" class="form-control" id="exampleFormControlInput1" autocomplete="name" value="{{user.name}}" >
+            <label for="user" class="form-label">Usuario</label>
+            <input type="name" name="user" class="form-control"  >
         </div>
           <div class=" mb-4">
-            <label for="exampleFormControlInput1" class="form-label">Contraseña</label>
-            <input type="pass" name="password" class="form-control" id="exampleFormControlInput1">
+            <label for="password" class="form-label">Contraseña</label>
+            <input type="password" name="pass" class="form-control">
         </div>
         <div class="d-flex flex-column align-items-center ">
-        <button class="bg-light border border-success p-2 mb-4" type="submit">Iniciar</button>
+        <button class="bg-light border border-success p-2 mb-4" type="submit" >Iniciar</button>
         </div>
        </form>
      </div>
@@ -87,9 +94,10 @@
   </div>
   <div class="offcanvas-body">
       <div class="col m-auto border p-5 text-center"> 
+
        <form action="/user/register" method="POST" class="h-100 ">
         <div class=" mb-4">
-            <label for="name" class="form-label">Usuario</label>
+            <label for="user" class="form-label">Usuario</label>
             <input type="name" name="user" class="form-control" >
         </div>
         <div class=" mb-4">
@@ -97,106 +105,23 @@
             <input type="email" name="email" class="form-control" >
         </div>
           <div class=" mb-4">
-            <label for="pass" class="form-label">Contraseña</label>
-            <input type="pass" name="password" class="form-control">
+            <label for="password" class="form-label">Contraseña</label>
+            <input type="password" name="pass" class="form-control">
         </div>
         <div class="d-flex flex-column align-items-center ">
         <button class="bg-light border border-success p-2 mb-4" type="submit">Registrarse</button>
         </div>
        </form>
-     </div>
+       
+       </div>
+    </div>
   </div>
-</div>
 
 
 </main>
 
-{{!-- 
- <section class="contenedor contenedor-one" >
-      <div class="contenedor contenedor-about">
-        <h3>
-          Esta es una pagina creada con una idea principal, la cual es generar
-          un ambiente en el cual compartir lo bello de la Pasteleria y sus
-          sabores
-        </h3>
-        <p>"Por ello aqui encontraras los sabores de manera especial"</p>
-      </div>
-    </section>
-
-    <section class="contenedor contenedor-two">
-      <article class="contenedor-article">
-        <img
-          src="/images/reposteria 1.jpg"
-          style="width: 100%; height: 100%"
-        />
-      </article>
-
-      <div class="subcontainer">
-        <article class="contenedor-article2">
-          <h1>
-            Nuestros inicios se dieron hace ya 5 años, y fue solo como una idea
-            emprendedora del momento. Seleccionado por nuestros clientes mas
-            recientes por nuestra alta calidad en los productos
-          </h1>
-        </article>
-
-        <article class="contenedor-article3">
-          <h2>
-            De igual manera buscamos reforza siempre nuestros saberes y es
-            manteniendo nuestras 4 bases
-          </h2>
-          <ul>
-            <li>Optando por nuevas recetas</li>
-            <li>Mejorando recetas viejas</li>
-            <li>Diversificando sabores</li>
-            <li>Produciendo con mayor calidad</li>
-          </ul>
-        </article>
-      </div>
-    </section> --}}
-        
-
-{{!-- {{#if user}}
-      <div class="settings hidden" id="settings" >
-          <ul>
-            <li>Editar Perfil</li>
-            <li class="cerrar"><a href="/user/logout">Log Out</a></li>
-          </ul>
-      </div>  
-  {{else}}
-        <form action="/user/register" method="POST" class="container-form hidden" id="form-register">
-            <h1>Registrarse</h1>
-            <label for="name">Usuario</label>
-            <input type="text" name="user" >
-            <label for="email">Email</label>
-            <input type="email" name="email">
-            <label for="password">Contraseña</label>
-            <input type="password" name="password">
-        
-            <button type="submit">Registrarse</button>
-            <div class="divRegister" id="secondIniciar"><p class="parRegister">Si ya tienes una cuenta, haz click</p></div>
-        </form>
 
 
-         <form action="/user/login" method="POST" class="container-form hidden" id="form-login">
-            <h1>Inicar Sesion</h1>
-            <label for="name">Usuario</label>
-            <input type="text" name="user">
-            <label for="password">Contraseña</label>
-            <input type="password" name="password">
-        
-            <button type="submit">Acceder</button>
-            
-        </form> 
-{{/if}}
-        --}}
-  
-        {{sendMailStatus }}
-        {{message}}
+      
 
-
-{{!-- {{#if user}}
-<script src="/helpers/user-config.js"></script>
-{{else}}
-<script src="/helpers/user.js"></script>
-{{/if}} --}}
+<script src="/helpers/toast.js"></script>

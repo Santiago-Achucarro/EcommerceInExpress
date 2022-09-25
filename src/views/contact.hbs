@@ -4,49 +4,75 @@
 
          <!--FORMULARIO-->
           
-    <div class="err">   
-            {{#each arrayErr}}
-                <p>{{msg}}</p>
-            {{/each}}   
-    </div>
-    <main class="contenedor">
-        <form action="/contact" method="POST" class="contenedor-one">
-            <h1>Contactenos</h1>
+   
+    <main class="container-fluid d-flex row align-items-center justify-content-center m-auto " style="height: 80vh;">
+        <form action="/contact" method="POST" class="col-lg-6 col-sm-7 col-11 d-flex flex-column align-items-center gap-3 border border-dark bg-secondary bg-opacity-50 rounded-2 shadow rounded">
+          <h1 class="fs-7 mt-2">Contactenos</h1>
+            <div class="col-6 d-flex flex-column align-items-center gap-1">
             <label for="name">Nombre</label>
-            <input type="text" name="name" id="name">
-            <label for="number">Telefono</label>
-            <input type="text" name="number" id="number">
+            <input type="text" name="name" id="name" class="w-75">
+            </div>
+
+            <div class="col-6 d-flex flex-column align-items-center gap-1">
+            <label for="number">Celular</label>
+            <input type="text" name="number" id="number" class="w-75">
+            </div>
+
+            <div class="col-6 d-flex flex-column align-items-center gap-1">
             <label for="email">Email</label>
-            <input type="email" name="email" id="email">
-            <button type="submit">ENVIAR</button>
+            <input type="email" name="email" id="email" class="w-75">
+           </div>
+        
+            <button type="submit" class="mb-3 w-25 border border-2 border-secondary ">ENVIAR</button>
+
+             <div class="col-6 d-flex gap-2">   
+            {{#each arrayErr}}
+               <div class="alert alert-danger m-auto mb-2 " role="alert">
+                 {{msg}}
+                </div>
+            {{/each}}   
+
+            {{#if MailAccepted}}
+              <div class="alert alert-success m-auto mb-3" role="alert">
+                      {{MailAccepted}}
+              </div>
+              {{/if}} 
+
+              {{#if MailDenied}}
+              <div class="alert alert-danger m-auto mb-3" role="alert">
+                          {{MailDenied}}
+              </div>
+              {{/if}}
+              </div>
         </form>
     </main>
  
        
  
  <div class="offcanvas offcanvas-end" tabindex="-1" id="logIn" aria-labelledby="offcanvasRightLabel">
-  <div class="offcanvas-header ">
-    <h5 class="offcanvas-title " id="offcanvasRightLabel">Iniciar Sesion</h5>
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasRightLabel">Iniciar Sesion</h5>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div class="offcanvas-body">
     <div class="col m-auto border p-5 text-center"> 
        <form action="/user/login" method="POST" class="h-100">
-        <div class=" mb-4">
+        <div class="mb-4">
             <label for="exampleFormControlInput1" class="form-label">Usuario</label>
-            <input type="name" name="user" class="form-control" id="exampleFormControlInput1" autocomplete="name" value="{{user.name}}" >
+            <input type="name" name="user" class="form-control"  >
         </div>
-          <div class=" mb-4">
+          <div class="mb-4">
             <label for="exampleFormControlInput1" class="form-label">Contraseña</label>
-            <input type="pass"  name="password" class="form-control" id="exampleFormControlInput1">
+            <input type="password"  name="pass" class="form-control" >
         </div>
         <div class="d-flex flex-column align-items-center ">
-        <button class="bg-light border border-success p-2 mb-4">Iniciar</button>
+        <button class="bg-light border border-success p-2 mb-4" type="submit">Iniciar</button>
         </div>
        </form>
      </div>
   </div>
 </div>
+
 <div class="offcanvas offcanvas-end" tabindex="-1" id="sigIn" aria-labelledby="offcanvasRightLabel">
   <div class="offcanvas-header">
     <h5 class="offcanvas-title" id="offcanvasRightLabel">Registrarse</h5>
@@ -55,20 +81,20 @@
   <div class="offcanvas-body">
       <div class="col m-auto border p-5 text-center"> 
        <form action="/user/register" method="POST" class="h-100 ">
-        <div class=" mb-4">
+        <div class="mb-4">
             <label for="exampleFormControlInput1" class="form-label">Usuario</label>
-            <input type="name" name="user" class="form-control" id="exampleFormControlInput1"  >
+            <input type="name" name="user" class="form-control"  >
         </div>
-        <div class=" mb-4">
+        <div class="mb-4">
             <label for="exampleFormControlInput1" class="form-label">Email</label>
-            <input type="email" name="email" class="form-control" id="exampleFormControlInput1"  >
+            <input type="email" name="email" class="form-control"   >
         </div>
-          <div class=" mb-4">
+          <div class="mb-4">
             <label for="exampleFormControlInput1" class="form-label">Contraseña</label>
-            <input type="pass" name="password" class="form-control" id="exampleFormControlInput1">
+            <input type="password" name="pass" class="form-control" >
         </div>
         <div class="d-flex flex-column align-items-center ">
-        <button class="bg-light border border-success p-2 mb-4">Registrarse</button>
+        <button class="bg-light border border-success p-2 mb-4" type="submit">Registrarse</button>
         </div>
        </form>
      </div>
