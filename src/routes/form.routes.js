@@ -1,8 +1,8 @@
 const { Router } = require("express");
 const router = Router();
-const { RenderPostContact } = require("../controllers/form.controller");
+const { renderPostContact } = require("../controllers/form.controller");
 const validationRules = require("../validator/validator.controller");
 
-router.post("/contact", validationRules , RenderPostContact )
+router.post("/contact", validationRules , renderPostContact )
 
 module.exports = router

@@ -1,7 +1,7 @@
 let contenedorCantidad = document.getElementById("cantidades");
 let contenedorNombre = document.getElementById("unidad");
 let contenedorPrecio = document.getElementById("valores");
-
+let search = document.getElementById("search")
 
 let btns = document.querySelectorAll(".btn1");
 
@@ -75,3 +75,16 @@ function more(){
   }
 
 }
+
+
+search.addEventListener("keyup" ,(e) =>{
+  if(e.target.matches("#search")){
+
+      e.key === "Escape" ? e.target.value = "" : false
+
+    document.querySelectorAll(".card").forEach(producto => {
+      producto.textContent.toLowerCase().includes(e.target.value.toLowerCase())
+      ?producto.classList.remove("hidden"):producto.classList.add("hidden")
+    })
+  }
+})

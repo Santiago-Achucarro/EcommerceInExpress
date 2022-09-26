@@ -26,7 +26,7 @@ const usr = {
     if (!err) {
       res.render("store", {products,title: "Store", user: req.session.user, id: req.session.user.id});
     } else {
-      res.render("home", { title:"Home" , message: "Ya existe ese usuario" });
+      res.render("home", { title:"Home" , message: "Error de registro" });
     }
   });
 };
@@ -53,9 +53,28 @@ controller.renderPostLogin = async (req, res) => {
   
 };
 
-controller.RenderSettingsData = async (req,res) => {
+controller.renderSettingsData = async (req,res) => {
    const user =  await User.findById(req.session.user.id).lean()
    res.render("config", {title:"Perfil",user})
+}
+
+controller.renderSettingsUpdate = async (req,res) => {
+  try {
+    await User.findByIdAndUpdate(req.session.user.id, req.body)
+    res.render("config",{title: "Perfil" , accepted: "Cambios Realizados", user: req.session.user })
+  } catch (error) {
+    res.render("config",{title:"Perfil", refused: "Hubo un error en los cambios", user: req.session.user})
+  }
+}
+
+controller.renderUserDelete = async (req,res) => {
+  try {
+    await User.findByIdAndDelete(req.session.user.id)
+    req.session.destroy();
+    res.redirect("/");
+  } catch (error) {
+    res.render("config", {title: "Perfil" , refused: "Hubo un error en los cambios", user: req.session.user})
+  }
 }
 
 controller.renderGetLogout = async (req,res) => {

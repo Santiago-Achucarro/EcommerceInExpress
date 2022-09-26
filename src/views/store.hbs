@@ -4,28 +4,27 @@
 
     <!-- BOX DE PRODUCTOS -->
 
-
     <section class="contenedor-pr ">
-      <div class="box-prod bg-secondary bg-opacity-50 rounded-2">
+      <div class="box-prod d-flex justify-content-around overflow-auto bg-secondary bg-opacity-50 rounded-2">
         <div class="carro">
 
           <div class="cantidades" >
             <p class="fs-5 m-0">Cantidad</p>
-            <ol class="fs-6 m-0 p-0" id="cantidades">
+            <ol class="fs-6 m-0 p-0 text-center" id="cantidades">
               
             </ol>
           </div>
 
           <div class="unidad" >
             <p class="fs-5 m-0">Unidad</p>
-            <ol class="fs-6 m-0 p-0"  id="unidad">
+            <ol class="fs-6 m-0 p-0 text-center"  id="unidad">
             
             </ol>
           </div>
 
           <div class="valores" >
             <p class="fs-5 m-0">Valor</p>
-            <ol class="fs-6 m-0 p-0" id="valores">
+            <ol class="fs-6 m-0 p-0 text-center" id="valores">
            
             </ol>
           </div>
@@ -33,29 +32,15 @@
       </div>
     </section>
 
-    <!-- HEADER END-->
 
     <!-- FILTRADOR DE PRODUCTOS -->
  <form class="d-flex col-3 m-auto mt-2 " role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="search">
       </form>
 
-    {{!-- <section class="box-search">
-      <div class="search-pr" id="search-pr">
-        <input
-          type="search"
-          name="search"
-          id="search"
-          placeholder="Producto/Valor/Stock"
-          size="35vw"
-        />
-      </div>
-    </section> --}}
-
     <!-- PRODUCTOS -->
-    <section class="cards">
-      <!--Articulo 1-->
- 
+    <section class="cards d-flex flex-wrap justify-content-evenly">
+     
     {{#each products}}
      <article class="card bg-secondary bg-opacity-50">
       <div class="img">
@@ -75,5 +60,5 @@
      {{/each}}
     
     </section>
-    <!-- PRODUCTOS END-->
+    
   <script src="/helpers/market.js"></script>

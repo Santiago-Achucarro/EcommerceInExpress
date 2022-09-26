@@ -1,12 +1,17 @@
 const { Router } = require("express");
 const auth = require("../auth/authorization");
 const router = Router();
-const { RenderHome, RenderContact, RenderStore, RenderRegister,RenderNoAuth, RenderSpecialHome } = require("../controllers/app.controller")
+const { 
+    renderHome, 
+    renderContact, 
+    renderStore, 
+    renderNoAuth,
+    } = require("../controllers/app.controller")
 
-router.get("/", RenderHome)
-router.get("/store", auth , RenderStore)
-router.get("/contact", RenderContact)
-router.get("/noauth", RenderNoAuth)
+router.get("/", renderHome)
+router.get("/store", auth , renderStore)
+router.get("/contact", renderContact)
+router.get("/noauth", renderNoAuth)
 
 module.exports = router
 

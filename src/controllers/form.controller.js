@@ -1,7 +1,7 @@
 const controller = {};
 const transport  = require("../validator/transport.controller");
 
-controller.RenderPostContact = async (req,res) => {
+controller.renderPostContact = async (req,res) => {
     
   const {name,number,email} = req.body
   
