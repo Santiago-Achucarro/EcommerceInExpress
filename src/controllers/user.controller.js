@@ -10,6 +10,11 @@ controller.renderPostRegister = async (req, res) => {
   const { user, email, pass } = req.body;
   const password = await hashPass(pass);
 
+  console.log(user)
+  console.log(email)
+  console.log(pass)
+  console.log(password)
+
   const newUser = new User({
     user,
     email,
@@ -20,15 +25,18 @@ const usr = {
   id: newUser._id,
   name: newUser.user,
 };
+console.log(newUser)
 
-  req.session.user = usr
-  newUser.save((err) => {
-    if (!err) {
+newUser.save((err) => {
+  if (!err) {
+      req.session.user = usr
       res.render("store", {products,title: "Store", user: req.session.user, id: req.session.user.id});
     } else {
+      console.log(err)
       res.render("home", { title:"Home" , message: "Error de registro" });
     }
   });
+
 };
 
 controller.renderPostLogin = async (req, res) => {
