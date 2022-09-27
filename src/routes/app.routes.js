@@ -13,5 +13,6 @@ router.get("/store", auth , renderStore)
 router.get("/contact", renderContact)
 router.get("/noauth", renderNoAuth)
 
+
 module.exports = router
 

@@ -24,4 +24,6 @@ controller.renderNoAuth = (req, res) => {
         res.render("error", {title: "NoAuth"})
 }
 
+
+
 module.exports = controller;

@@ -29,6 +29,10 @@ app.use(require('./src/routes/user.routes'))
 // Static Folder
 app.use(express.static(path.join(__dirname ,'src/public')))
 
+app.use(function(req, res) {
+    res.status(404);
+    res.render("notFound", {user:req.session.user});
+});
 // Init Process
 app.listen(port,(err) => {
 err? console.log(err.code)
