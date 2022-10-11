@@ -11,6 +11,7 @@ controller.renderContact = (req, res) => {
 }
 
 controller.renderStore = (req, res) => {
+    console.log(req.session.user)
     res.render("store", {
         products, 
         title: 'Store', 

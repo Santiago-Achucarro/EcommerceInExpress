@@ -10,11 +10,6 @@ controller.renderPostRegister = async (req, res) => {
   const { user, email, pass } = req.body;
   const password = await hashPass(pass);
 
-  console.log(user)
-  console.log(email)
-  console.log(pass)
-  console.log(password)
-
   const newUser = new User({
     user,
     email,
@@ -25,7 +20,6 @@ const usr = {
   id: newUser._id,
   name: newUser.user,
 };
-console.log(newUser)
 
 newUser.save((err) => {
   if (!err) {
@@ -42,7 +36,6 @@ newUser.save((err) => {
 controller.renderPostLogin = async (req, res) => {
   const { user, pass } = req.body;
   const usuario = await User.find().where({user});
-  console.log(usuario);
   if (!usuario.length ) {
     return res.render("home", { title:"Home" , message: "Contraseña o Usuario incorrectos" });
   };
@@ -62,14 +55,16 @@ controller.renderPostLogin = async (req, res) => {
 };
 
 controller.renderSettingsData = async (req,res) => {
-   const user =  await User.findById(req.session.user.id).lean()
-   res.render("config", {title:"Perfil",user})
+   const usuario =  await User.findById(req.session.user.id).lean()
+   res.render("config", {title:"Perfil", usuario, user:req.session.user })
 }
 
 controller.renderSettingsUpdate = async (req,res) => {
   try {
     await User.findByIdAndUpdate(req.session.user.id, req.body)
-    res.render("config",{title: "Perfil" , accepted: "Cambios Realizados", user: req.session.user })
+    const usuario =  await User.findById(req.session.user.id).lean()
+    req.session.user.name = req.body.user
+    res.render("config",{title: "Perfil" , accepted: "Cambios Realizados", user: req.session.user, usuario})
   } catch (error) {
     res.render("config",{title:"Perfil", refused: "Hubo un error en los cambios", user: req.session.user})
   }
