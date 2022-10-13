@@ -10,22 +10,22 @@
           <h1 class="fs-7 mt-2">Contactenos</h1>
             <div class="col-6 d-flex flex-column align-items-center gap-1">
             <label for="name">Nombre</label>
-            <input type="text" name="name" id="name" class="w-75">
+            <input type="text" name="name" id="name" class="col-6 form-control">
             </div>
 
             <div class="col-6 d-flex flex-column align-items-center gap-1">
             <label for="number">Celular</label>
-            <input type="text" name="number" id="number" class="w-75">
+            <input type="text" name="number" id="number" class="col-6 form-control">
             </div>
 
             <div class="col-6 d-flex flex-column align-items-center gap-1">
             <label for="email">Email</label>
-            <input type="email" name="email" id="email" class="w-75">
+            <input type="email" name="email" id="email" class="col-6 form-control">
            </div>
         
-            <button type="submit" class="mb-3 w-25 border border-2 border-secondary ">ENVIAR</button>
+            <button type="submit" class="col-4 mb-2 border border-2 border-secondary ">ENVIAR</button>
 
-             <div class="col-6 d-flex gap-2">   
+             <div class="col-6 d-flex gap-2 flex-lg-row flex-wrap">   
               {{#each arrayErr}}
                 <div class="alert alert-danger m-auto mb-2 " role="alert">
                   {{msg}}
