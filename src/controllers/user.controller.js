@@ -1,10 +1,35 @@
-const User = require("../models/schema");
+const {User,Market} = require("../models/schema");
 const { hashPass,checkPass } = require("../public/helpers/bycript");
 const products = require("../public/json/productos.json");
 
 const controller = {};
 
 
+controller.renderMarket = (req,res) => {
+  let id = req.session.user.id
+  let data  = Object.keys(req.body)
+
+  for (let i = 0; i < data.length; i++) {
+    const element = data[i];
+    let values = req.body[element]
+    if(values <= 0){
+      console.log("estos valores no");
+    }else{
+      const newMarket = new Market ({
+        idUser: id,
+        amount:values,
+      })
+      newMarket.save((err) => {
+          if(!err){
+            res.render("store",{products,user: req.session.user, title:"store",values})
+          }else{
+            res.redirect("/")
+          }
+      })
+    }
+  }
+
+}
 
 controller.renderPostRegister = async (req, res) => {
   const { user, email, pass } = req.body;

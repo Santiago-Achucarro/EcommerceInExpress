@@ -22,17 +22,20 @@ for (let i = 0; i < btns.length; i++) {
   let listPrecio = document.createElement("li");
   let listCantidad = document.createElement("li");
 
+  let inputCantidad = document.getElementById(`${i}`)
+  let inputCantidadValue = inputCantidad.value
+
   contenedorCantidad.appendChild(listCantidad);
   contenedorNombre.appendChild(listNombre);
   contenedorPrecio.appendChild(listPrecio);
 
-  let newValue = +stock.slice(0, 2);
+  let Stock = +stock.slice(0, 2);
   let newPrice = +precio.slice(1, 5);
 
   rest.setAttribute("id", `rest${i}`);
   input.setAttribute("id", `input${i}`);
   element.setAttribute("id", `button${i}`);
-  input = document.getElementById(`input${i}`).value;
+  let inputValue = input.getAttribute("value")
   
   document.getElementById(`button${i}`)
   .addEventListener("click", more)
@@ -40,13 +43,29 @@ for (let i = 0; i < btns.length; i++) {
   document.getElementById(`rest${i}`)
   .addEventListener("click", less);
 
+
+  if (inputCantidad.value >= 1) {
+    listCantidad.innerText = inputCantidadValue;
+    listNombre.innerText = nombre;
+    listPrecio.innerText = `$${newPrice * inputCantidadValue}`;
+    rest.classList.remove("hidden");
+  } else {
+    listPrecio.innerText = "";
+    listCantidad.innerText = "";
+    listNombre.innerText = "";
+  }
+
 function more(){
-    if (input < newValue) {
-      input++;
-      if (input >= 1) {
-        listCantidad.innerText = input;
+    if (inputCantidadValue < Stock) {
+      inputCantidadValue++
+      inputCantidad.setAttribute("value",inputCantidadValue)
+      let plusValue = inputCantidad.getAttribute("value")
+      
+      input.setAttribute("value", plusValue)
+      if (inputCantidadValue >= 1) {
+        listCantidad.innerText = inputCantidadValue;
         listNombre.innerText = nombre;
-        listPrecio.innerText = `$${newPrice * input}`;
+        listPrecio.innerText = `$${newPrice * inputCantidadValue}`;
         rest.classList.remove("hidden");
       } else {
         listPrecio.innerText = "";
@@ -59,14 +78,21 @@ function more(){
 }
 
   function less() {
-    if (input > 1) {
-      input--;
-      listPrecio.innerText = `$${newPrice * input}`;
-      listCantidad.innerText = input;
+    if (inputCantidadValue > 1) {
+      inputCantidadValue--;
+      inputCantidad.setAttribute("value",inputCantidadValue);
+      let plusValue = input.getAttribute("value")
+      input.setAttribute("value", plusValue)
+
+      listPrecio.innerText = `$${newPrice * inputCantidadValue}`;
+      listCantidad.innerText = inputCantidadValue;
       listNombre.innerText = nombre;
       
-    } else if (input <= 1) {
-      input--;
+    } else if (inputCantidadValue <= 1) {
+      inputCantidadValue--;
+      inputCantidad.setAttribute("value",inputCantidadValue);
+      let plusValue = inputCantidad.getAttribute("value")
+      input.setAttribute("value", plusValue)
       listPrecio.innerText = "";
       listCantidad.innerText = "";
       listNombre.innerText = "";
@@ -88,3 +114,4 @@ search.addEventListener("keyup" ,(e) =>{
     })
   }
 })
+

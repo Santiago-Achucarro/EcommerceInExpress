@@ -9,5 +9,11 @@ const userSchema = new Schema({
     {timestamps:true}
 );
 
+const userMarket = new Schema({
+    idUser: {type:String,required:true},
+    amount: {type:Number, required:true}
+})
+
+const Market =  model("Market", userMarket)
 const User = model("User", userSchema);
-module.exports = User 
+module.exports = {User,Market} 

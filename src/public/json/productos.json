@@ -3,90 +3,105 @@
         "prod": "Torta 1",
         "valor" : 200,
         "stock" : 10,
-        "img": "/images/TortaPrueba.jpg"
+        "img": "/images/TortaPrueba.jpg",
+        "id": 0
     },
     {
         "prod" : "Torta 2",
         "valor" : 250,
         "stock" : 6,
-        "img": "/images/TortaPrueba.jpg"
+        "img": "/images/TortaPrueba.jpg",
+        "id": 1
     },
     {
         "prod": "Torta 3",
         "valor": 300,
         "stock" : 4,
-        "img": "/images/TortaPrueba.jpg"
+        "img": "/images/TortaPrueba.jpg",
+        "id": 2
     },
     {
         "prod": "Torta 4",
         "valor": 400,
         "stock" : 2,
-        "img": "/images/TortaPrueba.jpg"
+        "img": "/images/TortaPrueba.jpg",
+        "id": 3
     },
     {
         "prod": "Torta 5",
         "valor": 350,
         "stock" : 7,
-        "img": "/images/TortaPrueba.jpg"
+        "img": "/images/TortaPrueba.jpg",
+        "id": 4
     },
     {
         "prod": "Torta 6",
         "valor": 150,
         "stock" : 3,
-        "img": "/images/TortaPrueba.jpg"
+        "img": "/images/TortaPrueba.jpg",
+        "id": 5
     },
     {
         "prod": "Torta 7",
         "valor": 500,
         "stock" : 1,
-        "img": "/images/TortaPrueba.jpg"
+        "img": "/images/TortaPrueba.jpg",
+        "id": 6
     },
     {
         "prod": "Torta 8",
         "valor": 700,
         "stock" : 3,
-        "img": "/images/TortaPrueba.jpg"
+        "img": "/images/TortaPrueba.jpg",
+        "id": 7
     },
     {
         "prod": "Torta 9",
         "valor": 1000,
         "stock" : 10,
-        "img": "/images/TortaPrueba.jpg" 
+        "img": "/images/TortaPrueba.jpg",
+        "id" : 8
     },
     {
         "prod": "Torta 10",
         "valor": 1200,
         "stock" : 2,
-        "img": "/images/TortaPrueba.jpg" 
+        "img": "/images/TortaPrueba.jpg",
+        "id" : 9
     },
     {
         "prod": "Torta 11",
         "valor": 700,
         "stock" : 2,
-        "img": "/images/TortaPrueba.jpg" 
+        "img": "/images/TortaPrueba.jpg",
+        "id" : 10
     },
     {
         "prod": "Torta 12",
         "valor": 1250,
         "stock" : 3,
-        "img": "/images/TortaPrueba.jpg" 
+        "img": "/images/TortaPrueba.jpg",
+        "id" : 11
     },
     {
         "prod": "Torta 13",
         "valor": 1500,
         "stock" : 4,
-        "img": "/images/TortaPrueba.jpg" 
+        "img": "/images/TortaPrueba.jpg",
+        "id" : 12
     },
     {
         "prod": "Torta 14",
         "valor": 1200,
         "stock" : 7,
-        "img": "/images/TortaPrueba.jpg" 
+        "img": "/images/TortaPrueba.jpg",
+        "id" : 13
     },
     {
         "prod": "Torta 15",
         "valor": 100,
         "stock" : 6,
-        "img": "/images/TortaPrueba.jpg" 
+        "img": "/images/TortaPrueba.jpg",
+        "id" : 14
     }
 ]

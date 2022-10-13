@@ -7,15 +7,18 @@ const {
     renderGetLogout, 
     renderSettingsData, 
     renderSettingsUpdate,
-    renderUserDelete
+    renderUserDelete,
+    renderMarket
 } = require("../controllers/user.controller")
 
 router.post("/user/register", renderPostRegister)
 router.post("/user/login", renderPostLogin)
 router.post("/user/setting",auth, renderSettingsUpdate)
+router.post("/user/market", renderMarket)
 
 router.get("/user/logout", renderGetLogout)
 router.get("/user/setting",auth, renderSettingsData)
 router.get("/user/delete",auth, renderUserDelete )
+
 
 module.exports = router 
