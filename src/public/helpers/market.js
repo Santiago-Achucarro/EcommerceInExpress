@@ -3,7 +3,7 @@ let contenedorNombre = document.getElementById("unidad");
 let contenedorPrecio = document.getElementById("valores");
 let search = document.getElementById("search")
 
-let btns = document.querySelectorAll(".btn1");
+let btns = document.querySelectorAll("#btns");
 
 
 

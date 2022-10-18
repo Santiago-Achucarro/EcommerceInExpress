@@ -39,14 +39,14 @@ controller.renderPostLogin = async (req, res) => {
   if (!usuario.length ) {
     return res.render("home", { title:"Home" , message: "Contraseña o Usuario incorrectos" });
   };
+
   const usr = {
     id: usuario[0]._id,
     name: usuario[0].user
   }
-
   if(await checkPass(pass, usuario[0].password)){
     req.session.user = usr
-    res.render("store", {products, title: "Store", user: req.session.user, id:`${req.session.user.id}`});
+    res.render("store", {products, title: "Store", user: req.session.user, id:req.session.user.id});
   }else{
   return res.render("home", { title:"Home" , message: "Contraseña o Usuario incorrectos" });
 

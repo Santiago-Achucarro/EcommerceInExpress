@@ -10,7 +10,6 @@ controller.renderPostContact = async (req,res) => {
         from: email,
         subject: "Solicitud De Contacto",
         html: `Hola que tal, mi nombre es ${name}, estoy buscando contactarme con usted, este es mi numero ${number} y este mi email ${email}`
-        // 
       }
       
       const sendMail = await transport.sendMail(emailMsg);

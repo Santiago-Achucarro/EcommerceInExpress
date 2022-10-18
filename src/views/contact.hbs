@@ -1,46 +1,44 @@
-<link rel="stylesheet" href="/css/contact.css">
+
 
 {{>navContact}}
 
-         <!--FORMULARIO-->
-          
+
+
    
     <main class="container-fluid d-flex row align-items-center justify-content-center m-auto " style="height: 80vh;">
-        <form action="/contact" method="POST" class="col-lg-6 col-sm-7 col-11 d-flex flex-column align-items-center gap-3 border border-dark bg-secondary bg-opacity-50 rounded-2 shadow rounded">
+
+        <form action="/contact" method="POST" class="container-fluid col-lg-6 d-flex flex-column align-items-center gap-3 border border-dark bg-secondary bg-opacity-50 rounded-2 shadow rounded mt-2">
           <h1 class="fs-7 mt-2">Contactenos</h1>
             <div class="col-6 d-flex flex-column align-items-center gap-1">
             <label for="name">Nombre</label>
-            <input type="text" name="name" id="name" class="col-6 form-control">
+            <input type="text" name="name" id="name" class="col-6 form-control" value={{formData.name}}>
             </div>
 
             <div class="col-6 d-flex flex-column align-items-center gap-1">
             <label for="number">Celular</label>
-            <input type="text" name="number" id="number" class="col-6 form-control">
+            <input type="text" name="number" id="number" class="col-6 form-control" value={{formData.number}}>
             </div>
 
             <div class="col-6 d-flex flex-column align-items-center gap-1">
             <label for="email">Email</label>
-            <input type="email" name="email" id="email" class="col-6 form-control">
+            <input type="email" name="email" id="email" class="col-6 form-control" value={{formData.email}}>
            </div>
         
             <button type="submit" class="col-4 mb-2 border border-2 border-secondary ">ENVIAR</button>
 
              <div class="col-6 d-flex gap-2 flex-lg-row flex-wrap">   
-              {{#each arrayErr}}
-                <div class="alert alert-danger m-auto mb-2 " role="alert">
-                  {{msg}}
-                  </div>
-              {{/each}}   
 
               {{#if MailAccepted}}
               <div class="alert alert-success m-auto mb-3" role="alert">
                     {{MailAccepted}}
+              <button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="alert"></button>
               </div>
               {{/if}} 
 
               {{#if MailDenied}}
               <div class="alert alert-danger m-auto mb-3" role="alert">
                     {{MailDenied}}
+              <button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="alert"></button>
               </div>
               {{/if}}
               </div>
@@ -100,3 +98,21 @@
      </div>
   </div>
 </div>
+
+{{#each arrayErr}}
+
+   <div class="toast-container position-fixed bottom-0 start-50 translate-middle-x p-3">
+      <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+          <strong class="me-auto">{{param}}</strong>
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+        {{msg}}
+        </div>
+      </div>
+    </div>
+
+{{/each}}
+
+<script src="/helpers/contact.js"></script>

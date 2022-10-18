@@ -15,17 +15,17 @@
          <li class="nav-item">
           <a class="nav-link" href="/store">Tienda</a>
         </li>
-          <li>
-            <a class="dropdown-item" href="/user/setting">{{user.name}}</a>
+          <li class="nav-item d-lg-none">
+            <a class="nav-link" href="/user/setting">{{user.name}}</a>
           </li>
-          <li>
-            <a class="dropdown-item" href="/user/logout">Log Out</a>
+          <li class="nav-item d-lg-none">
+            <a class="nav-link" href="/user/logout">Log Out</a>
           </li>
       {{else}}
         <li class="nav-item">
           <a class="nav-link" href="/">Home</a>
         </li>
-        <li class="nav-item" >
+        <li class="nav-item">
           <button class=" nav-link btn dropdown-item d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#logIn" aria-controls="offcanvasRight">Login</button>
         </li>
         <li class="nav-item">
@@ -43,7 +43,6 @@
             <li><a class="dropdown-item" href="/user/setting">{{user.name}}</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="/user/logout">Log Out</a></li>
-            
       {{else}}   
             <li><button class="btn btn-primary dropdown-item" type="button" data-bs-toggle="offcanvas" data-bs-target="#logIn" aria-controls="offcanvasRight">Login</button></li>
             <li><hr class="dropdown-divider"></li>

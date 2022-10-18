@@ -7,7 +7,6 @@ const validationRules = [
     body("number","Campo Celular obligatorio")
         .isLength({ min:10, max:10}),
     body("email","Ingrese un email valido")
-        .notEmpty()
         .isEmail()
         .exists(),
 
@@ -15,8 +14,8 @@ const validationRules = [
     const errors = validationResult(req);
         if(!errors.isEmpty()){
             const formData = req.body
-            console.log(formData);
             const arrayErr = errors.array();
+            
             res.render("contact", { arrayErr, formData, title:'Contact' })
           } else return next()
 }

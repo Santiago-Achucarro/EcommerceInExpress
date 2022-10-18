@@ -3,10 +3,9 @@
    {{>navStore}}
 
     <!-- BOX DE PRODUCTOS -->
-
-    <section class="contenedor-pr" style="z-index: 100;">
-      <div class="box-prod  d-flex justify-content-around overflow-auto bg-secondary bg-opacity-50 rounded-2">
-        <div class="carro ">
+    <section class="contenedor-pr d-sm-flex justify-content-center align-items-center mt-3 m-2">
+      <div class="box-prod d-flex justify-content-around overflow-auto bg-secondary bg-opacity-50 rounded-2">
+        <div class="d-flex gap-4 mt-2 ">
 
           <div class="cantidades" >
             <p class="fs-5 m-0">Cantidad</p>
@@ -28,14 +27,15 @@
            
             </ol>
           </div>
+
         </div>
       </div>
     </section>
 
 
     <!-- FILTRADOR DE PRODUCTOS -->
- <form class="d-flex col-3 m-auto mt-2 " role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="search">
+ <form class="col-9 col-lg-4 m-auto " role="search">
+        <input class="form-control" type="search" placeholder="Search" aria-label="Search" id="search">
       </form>
 
     <!-- PRODUCTOS -->
@@ -53,7 +53,7 @@
       </div>
       <div class="card-body btns">
         <input  type="number" value="0" style="display:none;">
-        <button class="btn1 rounded-2" >Add to Cart</button>
+        <button class="btn1 rounded-2" id="btns" >Add to Cart</button>
         <button class="rest hidden rounded-2">-</button>
       </div>
      </article>
